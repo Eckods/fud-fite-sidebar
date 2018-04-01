@@ -114,11 +114,8 @@
         alert(error.message);
       } else {
         console.log(results);
-        name = "L@gmail.com";
-        //name = results[0].username;
-        //console.log(name);
         for(var i = 0; i < results.length; i++) {
-          var foodCategory = new Row(results[i], name);
+          var foodCategory = new Row(results[i]);
           temp.$element.append(foodCategory.$element);
         }
       }
@@ -159,8 +156,11 @@
         alert(error.message);
       } else {
         console.log(results);
+        //name = "L@gmail.com";
+        //name = results[0].username;
+        //console.log(name);
         for (var i = 0; i < results.length; i++) {
-          var rowElement = new addPicDom(results[i], name);
+          var rowElement = new addPicDom(results[i],results[i].username);
           $(".user-content").append(rowElement.$element);
         }
 
@@ -296,7 +296,7 @@
 
     this.$element = $divWidgetBox;
   }
-  
+
   App.LoadCategories = LoadCategories;
   App.LoadMainContent = LoadMainContent;
   window.App = App;
